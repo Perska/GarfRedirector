@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta charset="UTF-8">
+	</head>
+	<body onload="redirect()">
+		<script>
+function redirect(){
+	params = window.location.href.split("?")
+	if (params.length<2) return
+	wanted = params[1]
+	direct = params[2] == "direct" // not implemented yet
+	if (wanted.length == 6) {
+		date = wanted.match(/.{1,2}/g)
+		if (date[0]>78){
+			date[0] = date[0] - 0 + 1900 + ""
+		}
+		else
+		{
+			date[0] = date[0] - 0 + 2000 + ""
+		}
+		window.location.replace("https://www.gocomics.com/garfield/" + date[0] + "/" + date[1] + "/" + date[2])
+	}
+}
+		</script>
+		<noscript>This redirector uses JavaScript.</noscript>
+	</body>
+</html>
