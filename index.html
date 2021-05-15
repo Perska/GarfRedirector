@@ -13,7 +13,7 @@ function redirect(){
 	direct = params[2] == "direct" // not implemented yet
 	if (wanted.length == 6) {
 		date = wanted.match(/.{1,2}/g)
-		if (date[0]>78){
+		if (date[0]>=78){
 			date[0] = date[0] - 0 + 1900 + ""
 		}
 		else
